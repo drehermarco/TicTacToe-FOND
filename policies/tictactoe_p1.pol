@@ -1,0 +1,1487 @@
+Mapping:
+
+  var0:0	<-> 	 draw()
+  var0:1	<-> 	 not(draw())
+  var10:0	<-> 	 o(r1, c1)
+  var10:1	<-> 	 not(o(r1, c1))
+  var11:0	<-> 	 o(r1, c2)
+  var11:1	<-> 	 not(o(r1, c2))
+  var12:0	<-> 	 o(r1, c3)
+  var12:1	<-> 	 not(o(r1, c3))
+  var13:0	<-> 	 o(r2, c1)
+  var13:1	<-> 	 not(o(r2, c1))
+  var14:0	<-> 	 o(r2, c2)
+  var14:1	<-> 	 not(o(r2, c2))
+  var15:0	<-> 	 o(r2, c3)
+  var15:1	<-> 	 not(o(r2, c3))
+  var16:0	<-> 	 o(r3, c1)
+  var16:1	<-> 	 not(o(r3, c1))
+  var17:0	<-> 	 o(r3, c2)
+  var17:1	<-> 	 not(o(r3, c2))
+  var18:0	<-> 	 o(r3, c3)
+  var18:1	<-> 	 not(o(r3, c3))
+  var19:0	<-> 	 o-win()
+  var19:1	<-> 	 not(o-win())
+  var1:0	<-> 	 empty(r1, c1)
+  var1:1	<-> 	 x(r1, c1)
+  var1:2	<-> 	 <none of those>
+  var20:0	<-> 	 terminal()
+  var20:1	<-> 	 not(terminal())
+  var21:0	<-> 	 turn-o()
+  var21:1	<-> 	 turn-x()
+  var22:0	<-> 	 x-win()
+  var22:1	<-> 	 not(x-win())
+  var2:0	<-> 	 empty(r1, c2)
+  var2:1	<-> 	 x(r1, c2)
+  var2:2	<-> 	 <none of those>
+  var3:0	<-> 	 empty(r1, c3)
+  var3:1	<-> 	 x(r1, c3)
+  var3:2	<-> 	 <none of those>
+  var4:0	<-> 	 empty(r2, c1)
+  var4:1	<-> 	 x(r2, c1)
+  var4:2	<-> 	 <none of those>
+  var5:0	<-> 	 empty(r2, c2)
+  var5:1	<-> 	 x(r2, c2)
+  var5:2	<-> 	 <none of those>
+  var6:0	<-> 	 empty(r2, c3)
+  var6:1	<-> 	 x(r2, c3)
+  var6:2	<-> 	 <none of those>
+  var7:0	<-> 	 empty(r3, c1)
+  var7:1	<-> 	 x(r3, c1)
+  var7:2	<-> 	 <none of those>
+  var8:0	<-> 	 empty(r3, c2)
+  var8:1	<-> 	 x(r3, c2)
+  var8:2	<-> 	 <none of those>
+  var9:0	<-> 	 empty(r3, c3)
+  var9:1	<-> 	 x(r3, c3)
+  var9:2	<-> 	 <none of those>
+
+Policy:
+
+If holds: not(o-win())/terminal()
+Execute: goal / SC / d=0
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/x(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/x(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/x(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/x(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/<none of those>/x(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/o(r3, c3)/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/empty(r2, c3)/x(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/x(r3, c1)/<none of those>/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/x(r2, c3)/<none of those>/x(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/x(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/x(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/x(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/x(r3, c1)/<none of those>/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/x(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/x(r2, c3)/<none of those>/x(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/x(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/<none of those>/x(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/x(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/<none of those>/x(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/<none of those>/x(r2, c3)/<none of those>/x(r3, c2)/x(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/<none of those>/x(r2, c3)/x(r3, c1)/x(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/<none of those>/x(r3, c1)/x(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/<none of those>/<none of those>/x(r3, c2)/x(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/x(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/x(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/x(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/x(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/x(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/x(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/x(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/x(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/x(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/x(r3, c1)/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/x(r3, c1)/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/x(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/x(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/x(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/<none of those>/x(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/x(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/x(r3, c2)/<none of those>/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/x(r3, c1)/empty(r3, c2)/empty(r3, c3)/not(x-win())/not(o-win())/not(terminal())
+Execute: check-terminal  / SC / d=1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/empty(r2, c3)/<none of those>/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/<none of those>/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/<none of those>/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/<none of those>/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c2 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/<none of those>/x(r2, c3)/<none of those>/x(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/<none of those>/x(r2, c3)/empty(r3, c1)/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/<none of those>/empty(r3, c1)/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/x(r2, c3)/<none of those>/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/<none of those>/<none of those>/x(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / SC / d=2
+
+If holds: o(r1, c1)/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: o(r1, c1)/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/x(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c3 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/x(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c2 / SC / d=2
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c1 / SC / d=2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/x(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/x(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/<none of those>/x(r2, c3)/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/x(r2, c3)/<none of those>/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/x(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / SC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c1 / SC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c2 / SC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / SC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c1 / SC / d=4
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/x(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/x(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/<none of those>/x(r2, c3)/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/x(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/x(r2, c3)/<none of those>/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/<none of those>/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c3))/<none of those>/x(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c1)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c2 / NSC / d=4
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c2 / NSC / d=4
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c2 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c2 / NSC / d=4
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c2 / NSC / d=4
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/x(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/<none of those>/x(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c3 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/<none of those>/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / NSC / d=4
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c2 / NSC / d=4
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c2 / NSC / d=4
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r2 c1 / NSC / d=4
+
+If holds: o(r1, c1)/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c3))/<none of those>/empty(r1, c2)/x(r1, c3)/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c2 / NSC / d=4
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/x(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-o  / NSC / d=5
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r1, c3))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c2)/empty(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r1 c3 / NSC / d=6
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())
+Execute: place-x r3 c2 / NSC / d=6
+
+FSAP:
+
+If holds: empty(r3, c3)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r3 c3
+
+If holds: empty(r3, c2)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r3 c2
+
+If holds: empty(r3, c1)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r3 c1
+
+If holds: empty(r2, c3)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r2 c3
+
+If holds: empty(r2, c2)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r2 c2
+
+If holds: empty(r2, c1)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r2 c1
+
+If holds: empty(r1, c3)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r1 c3
+
+If holds: empty(r1, c2)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r1 c2
+
+If holds: empty(r1, c1)/turn-x()/o-win()/not(terminal())
+Forbid: place-x r1 c1
+
+If holds: empty(r3, c3)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r3, c2)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r3, c1)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r2, c3)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r2, c2)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r2, c1)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r1, c3)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r1, c2)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: empty(r1, c1)/turn-o()/o-win()/not(terminal())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/x(r1, c2)/<none of those>/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r2, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/x(r1, c2)/<none of those>/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c3)/empty(r3, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/o(r3, c3)/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/o(r3, c3)/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/x(r1, c1)/x(r1, c2)/<none of those>/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c2))/o(r3, c3)/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/empty(r2, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/x(r1, c1)/x(r1, c2)/<none of those>/x(r2, c1)/x(r2, c2)/<none of those>/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r2, c1)/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/<none of those>/<none of those>/<none of those>/empty(r2, c3)/x(r3, c1)/x(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/empty(r1, c2)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c2)/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/empty(r1, c2)/<none of those>/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c3)/<none of those>/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/<none of those>/empty(r2, c1)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/empty(r1, c2)/<none of those>/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/empty(r1, c1)/<none of those>/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/<none of those>/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/empty(r1, c2)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/empty(r1, c1)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/o(r2, c1)/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/x(r1, c1)/x(r1, c2)/empty(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/empty(r3, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/<none of those>/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/x(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/x(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c2))/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/<none of those>/x(r2, c1)/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/x(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/<none of those>/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/x(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c2)/empty(r1, c3)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/empty(r1, c3)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/<none of those>/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/<none of those>/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c2)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c1)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c2)/<none of those>/empty(r2, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c1)/<none of those>/empty(r2, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c2)/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/empty(r1, c1)/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/<none of those>/empty(r2, c3)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/<none of those>/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/<none of those>/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c3)/empty(r3, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/o(r3, c3)/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/o(r3, c3)/empty(r1, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c3)/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/x(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/empty(r3, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/<none of those>/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/empty(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/o(r2, c2)/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/<none of those>/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/x(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/empty(r2, c2)/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c2)/empty(r1, c3)/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/empty(r1, c3)/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c1)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r1, c3)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/<none of those>/empty(r1, c3)/empty(r2, c2)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/o(r3, c3)/empty(r1, c1)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c2)/<none of those>/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/empty(r2, c1)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/empty(r1, c3)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/empty(r1, c3)/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/o(r2, c2)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c2)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c2)/<none of those>/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c2
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/empty(r3, c1)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c2))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/o(r2, c3)/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/empty(r1, c3)/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/o(r1, c3)/not(o(r2, c1))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/x(r1, c2)/empty(r1, c3)/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c2))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/x(r1, c1)/empty(r1, c2)/empty(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c3)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c3)/empty(r2, c3)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c3)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c3)/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/<none of those>/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/empty(r3, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/<none of those>/<none of those>/x(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c3))/empty(r3, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/empty(r1, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/<none of those>/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/empty(r3, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c2)/not(o(r3, c3))/empty(r3, c1)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r2, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/o(r3, c2)/not(o(r3, c3))/empty(r1, c2)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/o(r3, c1)/not(o(r3, c3))/x(r1, c1)/<none of those>/x(r1, c3)/x(r2, c1)/<none of those>/x(r2, c3)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-o()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-o 
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c3)/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c1)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r2, c3)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/<none of those>/empty(r1, c3)/empty(r2, c1)/empty(r2, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/not(o(r2, c2))/not(o(r2, c3))/not(o(r3, c1))/o(r3, c2)/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c1)/empty(r2, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c2)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c2
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c3)/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c3)/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c1)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r3 c1
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r2, c1)/<none of those>/empty(r2, c3)/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r2 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/<none of those>/empty(r1, c3)/empty(r2, c1)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c3
+
+If holds: not(o(r1, c1))/o(r1, c2)/not(o(r1, c3))/not(o(r2, c1))/o(r2, c2)/not(o(r2, c3))/not(o(r3, c1))/not(o(r3, c2))/not(o(r3, c3))/empty(r1, c1)/<none of those>/empty(r2, c1)/<none of those>/empty(r3, c2)/empty(r3, c3)/turn-x()/not(x-win())/not(o-win())/not(terminal())/not(draw())
+Forbid: place-x r1 c1
+
