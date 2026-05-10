@@ -1,4 +1,4 @@
-(define (problem ttt-p1)
+(define (problem ttt-p3)
     (:domain tictactoe)
     (:objects
 		t1 t2 t3 t4 t5 t6 t7 t8 t9 - tile
@@ -11,7 +11,7 @@
 		(turn-x)
     )
     (:goal
-		;; Goal: X needs to win or at least draw
-      	(and (terminal) (not (o-win)))
+		;; Goal: X needs to win
+      	(and (x-win))
     )
 )

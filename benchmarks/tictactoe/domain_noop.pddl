@@ -30,36 +30,33 @@
         )
     )
 
-    ;; O places an O into any tile via oneof clause -> one of the tiles is chosen nondeterministically
-    ;; Additionally, if the chosen tile is not empty, X wins as the move is invalid (credit to Prof Helmert for the idea)
+    ;; Initial idea of the non-deterministic action, but this induces self loops as an invalid moves do not change the state
     (:action place-o
         :precondition (and (turn-o) (not (terminal)) (not (check)))
         :effect
         (oneof
-            (and (when (empty t1) (and (not (empty t1)) (o t1) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t1)) (and (terminal) (x-win))))
-            (and (when (empty t2) (and (not (empty t2)) (o t2) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t2)) (and (terminal) (x-win))))
-            (and (when (empty t3) (and (not (empty t3)) (o t3) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t3)) (and (terminal) (x-win))))
-            (and (when (empty t4) (and (not (empty t4)) (o t4) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t4)) (and (terminal) (x-win))))
-            (and (when (empty t5) (and (not (empty t5)) (o t5) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t5)) (and (terminal) (x-win))))
-            (and (when (empty t6) (and (not (empty t6)) (o t6) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t6)) (and (terminal) (x-win))))
-            (and (when (empty t7) (and (not (empty t7)) (o t7) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t7)) (and (terminal) (x-win))))
-            (and (when (empty t8) (and (not (empty t8)) (o t8) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t8)) (and (terminal) (x-win))))
-            (and (when (empty t9) (and (not (empty t9)) (o t9) (not (turn-o)) (turn-x) (check)))
-                (when (not (empty t9)) (and (terminal) (x-win))))
+            (when (empty t1)
+                (and (not (empty t1)) (o t1) (not (turn-o)) (turn-x) (check)))
+            (when (empty t2)
+                (and (not (empty t2)) (o t2) (not (turn-o)) (turn-x) (check)))
+            (when (empty t3)
+                (and (not (empty t3)) (o t3) (not (turn-o)) (turn-x) (check)))
+            (when (empty t4)
+                (and (not (empty t4)) (o t4) (not (turn-o)) (turn-x) (check)))
+            (when (empty t5)
+                (and (not (empty t5)) (o t5) (not (turn-o)) (turn-x) (check)))
+            (when (empty t6)
+                (and (not (empty t6)) (o t6) (not (turn-o)) (turn-x) (check)))
+            (when (empty t7)
+                (and (not (empty t7)) (o t7) (not (turn-o)) (turn-x) (check)))
+            (when (empty t8)
+                (and (not (empty t8)) (o t8) (not (turn-o)) (turn-x) (check)))
+            (when (empty t9)
+                (and (not (empty t9)) (o t9) (not (turn-o)) (turn-x) (check)))
         )
     )
 
-    ;; As PRP does not allow derived predicates or disjunctive goal conditions I had to model a terminal check action that is enforced after every move
-    ;; My initial model did not enforce it every turn, but I found that the policies even tho stated as Strong Cyclic had configurations where O could win
-    ;; No idea why this is the case, I assume this comes from PRP relying to much on the penality of invalid moves? 
+
     (:action check-terminal
         :precondition (and (check) (not (terminal)))
         :effect

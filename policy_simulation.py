@@ -3,7 +3,7 @@ import random
 import re
 import time
 
-def load_policy(path="test.pol"):
+def load_policy(path="policies/tictactoe/p1.pol"):
     rules = {}
     with open(path) as f:
         lines = [l.rstrip() for l in f]
@@ -22,6 +22,7 @@ def load_policy(path="test.pol"):
     state = None
     for line in filtered_lines:
         if line.startswith("If holds:"):
+            line = line.replace("If holds:", "")
             state = ""
             for l in line.split("/"):
                 l = l.strip()
@@ -30,7 +31,7 @@ def load_policy(path="test.pol"):
                 elif l.startswith("<none of those>"): state += "O"
         elif line.startswith("Execute:") and state is not None:
             action = line.split(":")[1].strip()
-            action = " ".join(action.split()[1:3])
+            action = " ".join(action.split()[:2])
             rules[state] = action
             state = None
     return rules
@@ -38,14 +39,21 @@ def load_policy(path="test.pol"):
 def apply_policy_move(board, rules):
     if board in rules:
         act = rules[board]
-        m = re.search(r"r(\d)\s*c(\d)", act)
+        if not act.startswith('place-x'):
+            return board
+
+        m = re.search(r"\bt(\d)\b", act)
         if m:
-            r, c = int(m.group(1)), int(m.group(2))
-            idx = (r - 1) * 3 + (c - 1)
-            if board[idx] == '_':
-                b = list(board)
-                b[idx] = 'X'
-                return "".join(b)
+            n = int(m.group(1))
+
+        if n is None or not (1 <= n <= 9):
+            return board
+
+        idx = n - 1
+        if board[idx] == '_':
+            b = list(board)
+            b[idx] = 'X'
+            return "".join(b)
     return board
 
 def random_o_move(board):
@@ -89,10 +97,10 @@ def policy_action_for_board(board, rules):
     if board not in rules:
         return None
     act = rules[board]
-    m = re.search(r"r(\d)\s*c(\d)", act)
+    m = re.search(r"\bt(\d)\b", act)
     if not m:
         return None
-    return f"place-x r{m.group(1)} c{m.group(2)}"
+    return f"place-x r{m.group(1)}"
 
 def render_board(board):
         cells = "".join(f"<div class='cell'>{board[i]}</div>" for i in range(9))
@@ -109,6 +117,7 @@ def render_board(board):
 
 if winner:
     status_text = f"Status: Winner {winner}"
+    if winner == "O": print("Opponent 'O' won!")
 elif '_' not in board:
     status_text = "Status: Draw"
 else:
@@ -149,7 +158,7 @@ with col3:
         st.rerun()
 
 if st.session_state.auto_simulate:
-    time.sleep(1.25)
+    time.sleep(0.25)
     current_winner = check_winner(st.session_state.board)
     is_draw = '_' not in st.session_state.board
 
