@@ -12,6 +12,6 @@
     )
     (:goal
 		;; Goal: X needs to win
-      	(and (x-win))
+      	(x-win)
     )
 )

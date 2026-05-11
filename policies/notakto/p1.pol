@@ -1,0 +1,797 @@
+Mapping:
+
+  var0:0	<-> 	 check()
+  var0:1	<-> 	 not(check())
+  var10:0	<-> 	 x(t6)
+  var10:1	<-> 	 not(x(t6))
+  var11:0	<-> 	 x(t7)
+  var11:1	<-> 	 not(x(t7))
+  var12:0	<-> 	 x(t8)
+  var12:1	<-> 	 not(x(t8))
+  var13:0	<-> 	 x(t9)
+  var13:1	<-> 	 not(x(t9))
+  var1:0	<-> 	 p1-win()
+  var1:1	<-> 	 not(p1-win())
+  var2:0	<-> 	 p2-win()
+  var2:1	<-> 	 not(p2-win())
+  var3:0	<-> 	 terminal()
+  var3:1	<-> 	 not(terminal())
+  var4:0	<-> 	 turn-p1()
+  var4:1	<-> 	 turn-p2()
+  var5:0	<-> 	 x(t1)
+  var5:1	<-> 	 not(x(t1))
+  var6:0	<-> 	 x(t2)
+  var6:1	<-> 	 not(x(t2))
+  var7:0	<-> 	 x(t3)
+  var7:1	<-> 	 not(x(t3))
+  var8:0	<-> 	 x(t4)
+  var8:1	<-> 	 not(x(t4))
+  var9:0	<-> 	 x(t5)
+  var9:1	<-> 	 not(x(t5))
+
+Policy:
+
+If holds: p1-win()
+Execute: goal / SC / d=0
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/x(t4)/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/x(t3)/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/x(t7)/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/x(t6)/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/not(terminal())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: x(t1)/x(t2)/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=1
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())
+Execute: p2-x  / SC / d=1
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/x(t2)/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t4 / SC / d=2
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t4 / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t2 / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t2 / SC / d=2
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t8 / SC / d=2
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t7 / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t8 / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t4 / SC / d=2
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t9 / SC / d=2
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/check()
+Execute: check-terminal  / SC / d=2
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t8 / SC / d=2
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t5 / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t2 / SC / d=3
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t4 / SC / d=3
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t7 / SC / d=3
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t3 / SC / d=3
+
+If holds: not(x(t1))/x(t2)/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t1 / SC / d=3
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t6 / SC / d=3
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t3 / SC / d=3
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t3 / SC / d=3
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t9 / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t1 / SC / d=3
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t2 / SC / d=3
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t9 / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t3 / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t9 / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/not(check())
+Execute: p1-x t3 / SC / d=3
+
+If holds: x(t1)/not(x(t2))/x(t3)/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=3
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/x(t7)/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p1()/not(terminal())/check()
+Execute: check-terminal  / SC / d=4
+
+FSAP:
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/x(t5)/x(t6)/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/x(t5)/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/not(x(t4))/not(x(t5))/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/not(x(t5))/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/not(x(t5))/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/not(x(t5))/x(t6)/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/not(x(t5))/not(x(t6))/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/not(x(t5))/not(x(t6))/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/x(t6)/x(t7)/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/not(x(t4))/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/x(t9)/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/x(t2)/x(t3)/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: x(t1)/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/x(t3)/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/x(t5)/not(x(t6))/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/x(t6)/not(x(t7))/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/x(t7)/x(t8)/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
+If holds: not(x(t1))/not(x(t2))/not(x(t3))/x(t4)/not(x(t5))/not(x(t6))/not(x(t7))/not(x(t8))/not(x(t9))/turn-p2()/not(terminal())/not(check())/not(p2-win())/not(p1-win())
+Forbid: p2-x 
+
